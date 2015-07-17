@@ -29,7 +29,7 @@
         destroy-method="close">
         <beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <beans:property name="url"
-            value="jdbc:mysql://localhost:3306/logintest" />
+            value="jdbc:mysql://localhost:3306/javageek" />
         <beans:property name="username" value="root" />
         <beans:property name="password" value="clarion" />
     </beans:bean>
@@ -40,7 +40,7 @@
         <beans:property name="dataSource" ref="dataSource" />
         <beans:property name="annotatedClasses">
             <beans:list>
-                <beans:value>com.pasm.model.User</beans:value>
+                <beans:value>com.pasm.model.Article</beans:value>
             </beans:list>
         </beans:property>
         <beans:property name="hibernateProperties">
@@ -59,6 +59,14 @@
         <beans:property name="userDAO" ref="userDAO"></beans:property>
     </beans:bean>
 
+     
+     <beans:bean id="articleDAO" class="com.pasm.dao.ArticleDAOImpl">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+    <beans:bean id="articleService" class="com.pasm.service.ArticleServiceImpl">
+        <beans:property name="articleDAO" ref="articleDAO"></beans:property>
+    </beans:bean>
+     
      
     <tx:annotation-driven transaction-manager="transactionManager"/>
      
