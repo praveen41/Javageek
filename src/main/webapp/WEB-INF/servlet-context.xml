@@ -51,20 +51,29 @@
             </beans:props>
         </beans:property>
     </beans:bean>
-     
-    <beans:bean id="userDAO" class="com.pasm.dao.UserDAOImpl">
+	<!--      User Bean-->    
+	<beans:bean id="userDAO" class="com.pasm.dao.UserDAOImpl">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
     </beans:bean>
     <beans:bean id="userService" class="com.pasm.service.UserServiceImpl">
         <beans:property name="userDAO" ref="userDAO"></beans:property>
     </beans:bean>
-
-     
+	<!--      Article Bean-->    
+	
      <beans:bean id="articleDAO" class="com.pasm.dao.ArticleDAOImpl">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
     </beans:bean>
     <beans:bean id="articleService" class="com.pasm.service.ArticleServiceImpl">
         <beans:property name="articleDAO" ref="articleDAO"></beans:property>
+    </beans:bean>
+   
+   	<!-- Contact Bean-->    
+	
+     <beans:bean id="contactDAO" class="com.pasm.dao.ContactDAOImpl">
+        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+    <beans:bean id="contactService" class="com.pasm.service.ContactServiceImpl">
+        <beans:property name="contactDAO" ref="contactDAO"></beans:property>
     </beans:bean>
      
      
