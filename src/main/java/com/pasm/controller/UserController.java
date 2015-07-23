@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pasm.model.User;
 import com.pasm.service.UserService;
@@ -68,5 +69,19 @@ public class UserController {
 		model.addAttribute("listPersons", this.userService.listPersons());
 		return "person";
 	}
+	
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String login(Model model) {
+		return "login";
+	}
+	
+	@RequestMapping(value = "/loginAction", method = RequestMethod.POST)
+	public String loginAction(Model model,@RequestParam("email") String email,@RequestParam("password") String password) {
+		
+		System.out.println(email+"email");
+		return "login";
+	}
+	
 
 }
