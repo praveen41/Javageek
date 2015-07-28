@@ -15,44 +15,79 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table(name = "Person")
+@Table(name = "UserInfo")
 public class User {
 
 	@Id
-	@Column(name = "id")
+	@Column(name = "userId")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private int userId;
 
-	private String name;
+	private String emailId;
 
-	private String country;
+	private String firstName;
+	
+	private String lastName;
+	
+	private String password;
+	
+	private String profileImage;
+	
+	private String role;
 
-	public int getId() {
-		return id;
+	public int getUserId() {
+		return userId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public String getName() {
-		return name;
+	public String getEmailId() {
+		return emailId;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
 
-	public String getCountry() {
-		return country;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setCountry(String country) {
-		this.country = country;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	@Override
-	public String toString() {
-		return "id=" + id + ", name=" + name + ", country=" + country;
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getProfileImage() {
+		return profileImage;
+	}
+
+	public void setProfileImage(String profileImage) {
+		this.profileImage = profileImage;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 }

@@ -18,11 +18,6 @@ over-ride "Weak" message, show font in dark grey
     color: #333;
 } 
 
-/*
-Reference:
-http://www.bootstrapzen.com/item/135/simple-login-form-logo/
-*/
-
 * {
     -webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
@@ -98,9 +93,9 @@ form[role=login] {
       <section class="login-form">
         <form method="post" action="loginAction" role="login">
           <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
-          <input type="email" value="email" name="email" placeholder="Email" required class="form-control input-lg" />
+          <input type="email"  name="email" placeholder="Email" required class="form-control input-lg" />
           
-          <input type="password" value="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+          <input type="password" name="password"  class="form-control input-lg" id="password" placeholder="Password" required="" />
           
           
           <div class="pwstrength_viewport_progress"></div>

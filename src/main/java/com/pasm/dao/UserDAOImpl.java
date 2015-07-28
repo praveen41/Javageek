@@ -5,8 +5,12 @@ package com.pasm.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.LogicalExpression;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import com.pasm.model.User;
 
@@ -16,8 +20,6 @@ import com.pasm.model.User;
  */
 @Repository
 public class UserDAOImpl implements UserDAO {
-
-
 
 	private SessionFactory sessionFactory;
 
@@ -61,6 +63,18 @@ public class UserDAOImpl implements UserDAO {
 		if (null != p) {
 			session.delete(p);
 		}
+	}
+
+	@Override
+	public User loginAction(String email, String password) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Criteria cr = session.createCriteria(User.class);
+		Criterion emailId = Restrictions.eq("emailId", email);
+		Criterion pass = Restrictions.eq("password", password);
+		LogicalExpression andExp = Restrictions.and(emailId, pass);
+		cr.add(andExp);
+		User user = (User) cr.uniqueResult();
+		return user;
 	}
 
 }

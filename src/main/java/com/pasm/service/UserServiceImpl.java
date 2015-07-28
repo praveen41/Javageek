@@ -57,4 +57,11 @@ public class UserServiceImpl implements UserService {
     public void removePerson(int id) {
         this.userDAO.removePerson(id);
     }
+
+	@Override
+	@Transactional
+	public User loginAction(String email, String password) {
+		// TODO Auto-generated method stub
+		return userDAO.loginAction(email,password);
+	}
 }

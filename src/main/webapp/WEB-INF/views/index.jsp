@@ -63,7 +63,18 @@
                     <li>
                         <a href="contact">Contact</a>
                     </li>
-                </ul>
+					<c:if test="${empty user}">
+					<li>
+						<a href="login">Login</a>
+					</li>
+					</c:if>
+					<c:if test="${not empty user}">
+					<li>
+						<a href="logout">Logout</a>
+					</li>
+					</c:if>
+
+				</ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>

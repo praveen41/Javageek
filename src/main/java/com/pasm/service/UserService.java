@@ -23,4 +23,6 @@ public interface UserService {
 
 	public void removePerson(int id);
 
+	public User loginAction(String email, String password);
+
 }

@@ -1,0 +1,38 @@
+CREATE TABLE IF NOT EXISTS `Article` (
+  `Articleid` int(11) NOT NULL,
+  `articleName` varchar(1024) NOT NULL,
+  `articleUserId` int(11) NOT NULL,
+  `articleCreatedBy` varchar(1024) NOT NULL,
+  `articleCreatedDate` date NOT NULL,
+  `articleUpdatedBy` varchar(1024) DEFAULT NULL,
+  `articleUpdatedDate` date DEFAULT NULL,
+  `articleDescription` varchar(1024) NOT NULL,
+  PRIMARY KEY (`Articleid`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `Article`
+--
+
+INSERT INTO `Article` (`Articleid`, `articleName`, `articleUserId`, `articleCreatedBy`, `articleCreatedDate`, `articleUpdatedBy`, `articleUpdatedDate`, `articleDescription`) VALUES
+(1, 'I believe every human has a finite number of heartbeats. I don''t intend to waste any of mine.', 1, 'Peter', '2015-07-16', NULL, NULL, 'We predict too much for the next year and yet far too little for the next ten.'),
+(2, 'I believe every human has a finite number of heartbeats. I don''t intend to waste any of mine.', 1, 'Peter', '2015-07-16', NULL, NULL, 'We predict too much for the next year and yet far too little for the next ten.');
+
+
+CREATE TABLE IF NOT EXISTS `UserInfo` (
+  `userId` int(11) NOT NULL,
+  `emailId` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  `firstName` varchar(128) NOT NULL,
+  `lastName` varchar(128) DEFAULT NULL,
+  `profileImage` varchar(252) DEFAULT NULL,
+  `role` varchar(124) NOT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `UserInfo`
+--
+
+INSERT INTO `UserInfo` (`userId`, `emailId`, `password`, `firstName`, `lastName`, `profileImage`, `role`) VALUES
+(1, 'praveen@gmail.com', '123', 'Peter', 'G K', NULL, 'ADMIN');

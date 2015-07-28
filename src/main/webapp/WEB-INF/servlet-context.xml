@@ -41,6 +41,8 @@
         <beans:property name="annotatedClasses">
             <beans:list>
                 <beans:value>com.pasm.model.Article</beans:value>
+                 <beans:value>com.pasm.model.User</beans:value>
+                
             </beans:list>
         </beans:property>
         <beans:property name="hibernateProperties">
